@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    image: flask-api-app   # ← מוסיפים שם image ברור!
+    container_name: flask-api-app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    command: python run.py  # ← הזחה נכונה!
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
