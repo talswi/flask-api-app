@@ -10,6 +10,16 @@ venv/
 
 # Environment variables
 .env
+.flaskenv
 
 # VSCode settings (optional)
 .vscode/
+
+# Docker volumes and data folders
+mongo-data/
+postgres-data/
+**/data/
+*.log
+
+# macOS (אם תעבוד לפעמים ב-Mac)
+.DS_Store
